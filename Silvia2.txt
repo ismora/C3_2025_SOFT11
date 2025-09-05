@@ -1,0 +1,3 @@
+RF-01: El sistema debe permitir a los usuarios reservar un espacio de estacionamiento. Funcional 
+RF-04: El sistema debe enviar una confirmación de reserva mediante mensaje o correo electrónico. Funcional
+RF-05: El sistema debe proporcionar actualizaciones en tiempo real sobre la ocupación de los estacionamientos. No Funcional
