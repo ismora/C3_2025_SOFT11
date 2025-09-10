@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Alemania",
+        "capital": "Berlín",
+        "cantidadHabitantes": 83517030,
+        "Superficie(km²)": 357114
+    },
+    {
+        "nombre": "Corea del Sur",
+        "capital": "Seúl",
+        "cantidadHabitantes": 51439038,
+        "Superfici(km²)": 100363
+    },
+    {
+        "nombre": "Brasil",
+        "capital": "Brasilia",
+        "cantidadHabitantes": 213400000,
+        "Superficie(km²)": 8515767
+    },
+    {
+        "nombre": "Japón",
+        "capital": "Tokio",
+        "cantidadHabitantes": 123105000,
+        "Superficie(km²)": 377975
+    }
+]

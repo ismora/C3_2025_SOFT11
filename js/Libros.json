@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "Genética Explicada",
+        "categoria": "Biología",
+        "precio": 7000
+    },
+    {
+        "nombre": "Matematicos y Formulas",
+        "categoria": "Matemática",
+        "precio": 11000
+    },
+    {
+    "nombre": "Mendel: Herencia por leyes",
+    "categoria": "Biología",
+    "precio": 9800
+    }
+]
