@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "Botánica general",
+        "categoria": "Biología",
+        "precio": 8000
+    },
+    {
+        "nombre": "Matemática discreta",
+        "categoria": "Matemática",
+        "precio": 8000
+    },
+    {
+        "nombre": "Plantas medicinales",
+        "categoria": "Biología",
+        "precio": 9500
+    }
+]
