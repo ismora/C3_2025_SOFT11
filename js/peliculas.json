@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "50 first dates",
+        "categoria": "Romantic Comedy",
+        "Precio": 10000
+    },
+    {
+        "nombre": "Pretty Woman",
+        "categoria": "Romance",
+        "Precio": 11000
+    },
+    {
+        "nombre": "Poltergeist",
+        "categoria": "Horror",
+        "Precio": 8000
+    }
+]

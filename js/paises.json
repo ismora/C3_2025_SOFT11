@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Costa Rica",
+        "capital": "San Jose",
+        "cantidadHabitantes": 5130000,
+        "tamañoKm2": 51100
+    },
+    {
+        "nombre": "Estados Unidos",
+        "capital": "Washington DC",
+        "cantidadHabitantes": 340100000,
+        "tamañoKm2": 9867000
+    },
+    {
+        "nombre": "Mexico",
+        "capital": "Mexico City",
+        "cantidadHabitantes": 130900000,
+        "tamañoKm2": 1973000
+    },
+    {
+        "nombre": "Francia",
+        "capital": "Paris",
+        "cantidadHabitantes": 68520000,
+        "tamañoKm2": 551695
+    }
+]
