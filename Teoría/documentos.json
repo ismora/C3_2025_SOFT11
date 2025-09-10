@@ -1,0 +1,30 @@
+[
+    {
+        "nombre": "Isabel",
+        "edad": 29,
+        "esEstudiante": false,
+        "coloresPreferidos": [
+            "azul",
+            "verde",
+            "negro"
+        ],
+        "direccion": {
+            "provincia": "Heredia",
+            "canton": "Central"
+        }
+    },
+    {
+        "nombre": "Mateo",
+        "edad": 7,
+        "esEstudiante": false,
+        "coloresPreferidos": [
+            "rojo",
+            "verde",
+            "negro"
+        ],
+        "direccion": {
+            "provincia": "Heredia",
+            "canton": "Central"
+        }
+    }
+]

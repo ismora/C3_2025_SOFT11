@@ -1,0 +1,46 @@
+[
+    {
+        "nombre": "Mateo",
+        "edad": 25,
+        "correo": "mateo@ejemplo.com",
+        "esEstudiante": false,
+        "direccion": {
+            "ciudad": "San José",
+            "pais": "Costa Rica",
+            "codigoPostal": "10101"
+        }
+    },
+    {
+        "nombre": "María",
+        "edad": 30,
+        "correo": "maria@example.com",
+        "esEstudiante": true,
+        "direccion": {
+            "ciudad": "Madrid",
+            "pais": "España",
+            "codigoPostal": "28001"
+        }
+    },
+    {
+        "nombre": "Carlos",
+        "edad": 28,
+        "correo": "carlos@example.com",
+        "esEstudiante": true,
+        "direccion": {
+            "ciudad": "Ciudad de México",
+            "pais": "México",
+            "codigoPostal": "06000"
+        }
+    },
+    {
+        "nombre": "Ana",
+        "edad": 22,
+        "correo": "ana@example.com",
+        "esEstudiante": false,
+        "direccion": {
+            "ciudad": "Buenos Aires",
+            "pais": "Argentina",
+            "codigoPostal": "C1000"
+        }
+    }
+]
