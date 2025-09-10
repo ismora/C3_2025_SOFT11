@@ -1,0 +1,28 @@
+{
+  "paises": [ 
+    {
+      "nombre": "México",
+      "capital": "Ciudad de México",
+      "habitantes": 128000000,
+      "superficie_km2": 1964375
+    },
+    {
+      "nombre": "Estados Unidos",
+      "capital": "Washington, D.C.",
+      "habitantes": 334000000,
+      "superficie_km2": 9525067
+    },
+    {
+      "nombre": "Francia",
+      "capital": "París",
+      "habitantes": 68000000,
+      "superficie_km2": 551695
+    },
+    {
+      "nombre": "Japón",
+      "capital": "Tokio",
+      "habitantes": 124000000,
+      "superficie_km2": 377975
+    }
+  ]
+}
