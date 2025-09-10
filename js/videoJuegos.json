@@ -1,0 +1,17 @@
+[   
+    {
+        "nombre": "The Witcher 3: Wild Hunt",
+        "categoria": "RPG Accion",
+        "descripcion": "Un épico juego de rol de mundo abierto con una trama envolvente y un vasto mundo abierto."
+    },
+    {
+        "nombre": "Resident Evil 4",
+        "categoria": "Survival Horror",
+        "descripcion": "Un juego de supervivencia y terror con una historia envolvente y un mundo de terror."
+    },
+    {
+        "nombre": "Cyberpunk 2077",
+        "categoria": "RPG Accion",
+        "descripcion": "Un juego de rol de mundo abierto con tecnología futurista y una historia envolvente."
+    }
+]

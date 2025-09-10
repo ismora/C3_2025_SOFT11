@@ -1,0 +1,26 @@
+[
+    {
+        "nombre":"Japon",
+        "capital":"Tokyo",
+        "poblacion": 123294513,
+        "superficie": "377.975 km²"
+    },
+    {
+        "nombre":"México",
+        "capital":"Ciudad de México",
+        "poblacion": 128455567,
+        "superficie": "377.975 km²"
+    },
+    {
+        "nombre":"España",
+        "capital":"Madrid",
+        "poblacion": 47519628,
+        "superficie": "505.992 km²"
+    },
+    {
+        "nombre":"Egipto",
+        "capital":"El Cairo",
+        "poblacion": 110990103,
+        "superficie": "1.001.450 km²"
+    }
+]
