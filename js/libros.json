@@ -1,0 +1,19 @@
+[{
+    "nombre": "El Quijote",
+    "autor": "Miguel de Cervantes",
+    "categoria": "Novela",
+    "precio": 19000
+},
+{
+    "nombre": "La Odisea",
+    "autor": "Homero",
+    "categoria": "Novela",
+    "precio": 15000
+},
+{
+    "nombre": "El Alquimista",
+    "autor": "Paulo Coelho",
+    "categoria": "Novela",
+    "precio": 15000
+}
+]

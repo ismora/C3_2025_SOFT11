@@ -1,0 +1,25 @@
+[{
+    "pais": "Costa Rica",
+    "capital": "San José",
+    "habitantes": 5044197,
+    "superficie": 51100
+},
+{
+    "pais": "Panamá",
+    "capital": "Ciudad de Panamá",
+    "habitantes": 4337768,
+    "superficie": 75417
+},
+{
+    "pais": "Nicaragua",
+    "capital": "Managua",
+    "habitantes": 6676948,
+    "superficie": 130373
+},
+{
+    "pais": "Honduras",
+    "capital": "Tegucigalpa",
+    "habitantes": 9571352,
+    "superficie": 112492
+}
+]
