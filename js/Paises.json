@@ -1,0 +1,30 @@
+[
+    {
+    "nombre" : "Costa Rica    ",
+    "capital" :"San Jose ",
+    "Habitantes" : 5265575,
+    "superficie" : 51.100 
+},
+
+ {
+    "nombre" : "Mexico",
+    "capital" :"Ciudad de Mexico ",
+    "Habitantes" : 131946900,
+    "superficie" : 1972550
+},
+
+ {
+    "nombre" : "España    ",
+    "capital" :"Madrid",
+    "Habitantes" : 49315949,
+    "superficie" : 505370
+
+},
+
+ {
+    "nombre" : "Japon    ",
+    "capital" :"Tokio ",
+    "Habitantes" : 123400000,
+    "superficie" : 377975
+}
+]
