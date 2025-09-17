@@ -1,16 +1,32 @@
 // Variable: Espacio de memoria en la computadora, en donde un programa almacena un dato que puede o no cambiar durante la ejecución.  
 
 // Forma incorrecta de crear variables.
-
+/*
+var nombrePerro = "Firulais";
+var nombreGato; 
+nombreGato = "Michi";
+*/
 
 // Forma adecuada de crear variables.
+let nombrePerro = "Firulais"; // let: Variable que puede cambiar su valor durante la ejecución de un programa.
+console.log(nombrePerro);
 
+let nombreGato; 
+nombreGato = "Michi";
+console.log(nombreGato);
+
+let numeroDos = 2;
+console.log(numeroDos);
 
 //Constante: Valor que no cambia durante la ejecución de un programa. 
 
+const PI = 3.14;
+console.log(PI);
+
+const gravedad = 9.81;
+console.log(gravedad);
 
 // Función: Bloque de código reutilizable que realiza una tarea específica.
-
 
 /* Crear una función para calcular el IMC con la siguiente fórmula:
 IMC = peso / estatura^2
@@ -20,6 +36,14 @@ Datos de prueba en kg       m       IMC
                     60      1.8     18.5
 */
 
+function calcularIMC(peso, estatura) {
+    //let imc = peso / (estatura * estatura);
+    let imc = peso / Math.pow(estatura, 2);
+    //console.log(imc);
+    return imc;
+}
+console.log("El IMC es: ", calcularIMC(80, 1.7));
+console.log("El IMC es: ", calcularIMC(60, 1.8));
 
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
@@ -28,6 +52,26 @@ Datos de prueba:    base    altura      área
                     ""      2           Error
                     0       2           Error
 */
+
+function areaRectangulo(base, altura) {
+    //Asignar altura = base si solo hay un dato de entrada
+    if (altura === undefined) {
+        altura = base;
+    }
+    else if (typeof base !== "number" || typeof altura !== "number" || base <= 0 || altura <= 0) {
+        return "Error: Ambos datos deben ser números positivos mayores que cero.";
+    }   
+    return base * altura;
+}
+
+console.log(areaRectangulo(5, 3));
+console.log(areaRectangulo(4));
+console.log(areaRectangulo("", 2));
+console.log(areaRectangulo(2, "2"));
+console.log(areaRectangulo(2, 0));
+
+//console.log(5 == "5"); //True (dato1 es igual(==) dato2 en valor pero no en tipo de dato)
+//console.log(5 === "5"); //False (tipo(dato1) es diferente(===) tipo(dato2))
 
 
 /*
@@ -42,7 +86,6 @@ Datos de prueba:    Temperatura     Escala      Resultado esperado
                     0               a           Error
 */
 
-
 /*
 Ejercicio 2: Crear una función para verificar si una palabra es un palíndromo
 
@@ -55,3 +98,6 @@ Datos de prueba:    Palabra         Resultado esperado
 
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
 */
+
+calcularIMC(80, 1.7);
+calcularIMC(60, 1.8);
