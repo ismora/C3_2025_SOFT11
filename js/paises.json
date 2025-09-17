@@ -1,0 +1,26 @@
+[
+    {
+        "pais": "Costa Rica",
+        "capital": "San José",
+        "habitantes": 5501362,
+        "superficie": "51100 km"
+    },
+    {
+        "pais": "Colombia",
+        "capital": "Bogotá",
+        "habitantes":  52939527,
+        "superficie": "1141748 km"
+    },
+    {
+        "pais": "Jamaica",
+        "capital": "Kingston",
+        "habitantes":  2839786,
+        "superficie": "10991 km"
+    },
+    {
+        "pais": "Kazajistán",
+        "capital": "Astaná",
+        "habitantes": 19861000,
+        "superficie": "2724900 km"
+    }
+]
