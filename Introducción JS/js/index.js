@@ -1,3 +1,10 @@
+// Guardar los inputs
+let txtPeso = document.getElementById("txtPeso");
+let txtEstatura = document.querySelector("#txtEstatura");
+let btnCalcularIMC = document.getElementById("btnCalcularIMC");
+
+let parrafoResultado = document.querySelector("#sctResultadoIMC p");
+
 // Variable: Espacio de memoria en la computadora, en donde un programa almacena un dato que puede o no cambiar durante la ejecución.  
 
 // Forma incorrecta de crear variables.
@@ -36,14 +43,48 @@ Datos de prueba en kg       m       IMC
                     60      1.8     18.5
 */
 
-function calcularIMC(peso, estatura) {
+function calcularIMC() {
     //let imc = peso / (estatura * estatura);
-    let imc = peso / Math.pow(estatura, 2);
-    //console.log(imc);
-    return imc;
+    let peso = txtPeso.value;
+    let estatura = txtEstatura.value;
+    if(validarCamposVacios()===false){
+
+        let imc = peso / Math.pow(estatura, 2);
+        parrafoResultado.innerText = imc.toFixed(2); //Mostrar el resultado en el HTML > sección > p
+    }
+
+    else{
+        //parrafoResultado.innerText = "Por favor complete los valores en los campos vacios";
+        //alert("Por favor complete los valores en los campos vacios"); Esto está prohibido utilizarlo en el curso
+        Swal.fire({
+            icon: "warning",
+            title: "No se pudo calcular el IMC",
+            text: "Por favor revise los campos resaltados",
+        });
+    }
 }
-console.log("El IMC es: ", calcularIMC(80, 1.7));
-console.log("El IMC es: ", calcularIMC(60, 1.8));
+function validarCamposVacios() {
+    let error = false; // Por defecto se inicializa  en false asumiendo que no hay errores
+    if (txtPeso.value === "") {
+        txtPeso.classList.add("input-error");
+        error = true;
+    }
+    else {
+        txtPeso.classList.remove("input-error");
+    }
+    if (txtEstatura.value === "") {
+        txtEstatura.classList.add("input-error");
+        error = true;
+    }
+    else {
+        txtEstatura.classList.remove("input-error");
+    }
+        return error;
+    }
+
+
+//console.log("El IMC es: ", calcularIMC(80, 1.7));
+//console.log("El IMC es: ", calcularIMC(60, 1.8));
 
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
@@ -99,5 +140,7 @@ Datos de prueba:    Palabra         Resultado esperado
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
 */
 
-calcularIMC(80, 1.7);
-calcularIMC(60, 1.8);
+//calcularIMC(80, 1.7);
+//calcularIMC(60, 1.8);
+
+btnCalcularIMC.addEventListener("click", calcularIMC);
