@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/imc.css">
 </head>
 <body>
+    <h1>Cálculo del IMC</h1>
+    <form>
+        <div>
+            <label for="txtPeso">Peso en kilogramos:</label>
+            <input type="number" id="txtPeso" step="0.3" min="0" max="100">
+        </div>
+
+        <div>
+            <label for="txtEstatura">Estatura en metros:</label>
+            <input type="number" id="txtEstatura">
+        </div>
+
+        <button type="button" id="btnCalcularIMC">Calcular IMC</button>
+
+        <!-- Formulario particionado -->
+        <fieldset>
+            <legend> Información para calcular el IMC</legend> 
+            <div>
+                <label for="txtPeso">Peso en kilogramos:</label>
+                <input type="number" id="txtPeso" step="0.3" min="0" max="100">
+            </div>
+
+            <div>
+                <label for="txtEstatura">Estatura en metros:</label>
+                <input type="number" id="txtEstatura">
+            </div>
+
+        <button type="button" id="btnCalcularIMC">Calcular IMC</button>
+
+        </fieldset>
+
+    </form>
+
+    <section id="sctResultadoIMC">
+        <h2>IMC:</h2>
+        <p> </p>
+        
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="js/index.js"></script>
     
