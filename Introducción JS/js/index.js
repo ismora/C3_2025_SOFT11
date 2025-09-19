@@ -4,9 +4,16 @@
 
 
 // Forma adecuada de crear variables.
+let nombreGatoUno = "Prince Artemins";
+console.log(nombreGatoUno)
 
+let nombreGatoDos = "May";
+console.log(nombreGatoDos)
 
 //Constante: Valor que no cambia durante la ejecución de un programa. 
+
+const nombreGatoTres = "Peter Pancho";
+console.log(nombreGatoTres)
 
 
 // Función: Bloque de código reutilizable que realiza una tarea específica.
@@ -20,6 +27,15 @@ Datos de prueba en kg       m       IMC
                     60      1.8     18.5
 */
 
+function calcularIMC(peso, estatura){
+    let imc = peso / (estatura*estatura);
+    //let imc = peso / Math.pow(estatura*estatura);
+    return imc;
+}
+
+console.log("El IMC es: " + calcularIMC(80, 1.7))
+console.log("El IMC es: " + calcularIMC(60, 1.8))
+
 
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
@@ -29,6 +45,21 @@ Datos de prueba:    base    altura      área
                     0       2           Error
 */
 
+function areaRectangulo(base, altura){
+    // Asignar altura = base si solo hay un dato de entrada
+    if (altura === undefined){
+        altura = base;
+    }
+    else if (typeof base != "number" || typeof altura != "number" || base <= 0 || altura <= 0){
+        return "Error: Ambos datos deben ser números"
+
+    }
+    return base * altura;
+ }
+
+
+console.log(5 == "5"); // True (dato1 es igual (==) al dato2)
+console.log( 5 === "5");  // False (tipo(dato1) es igual (==) al tipo(dato2) y dato1 es igual (==) al dato2)
 
 /*
 Ejercicio 1: Crear una función para convertir temperaturas entre Celsius y Fahrenheit.
