@@ -1,3 +1,9 @@
+//guardar los inputs
+let txtPeso = document.getElementById("txtPeso");
+let txtEstatura = document.querySelector("#txtEstatura");
+let btnCalcularIMC = document.getElementById("btnCalcularIMC");
+
+let parrafoResultado = document.querySelector("#sctResultadoIMC p");
 // Variable: Espacio de memoria en la computadora, en donde un programa almacena un dato que puede o no cambiar durante la ejecución.  
 
 // Forma incorrecta de crear variables.
@@ -45,13 +51,42 @@ Datos de prueba en kg       m       IMC
                     80      1.7     27.7
                     60      1.8     18.5
 */
-function calcularIMC(peso, estatura) {
-    let imc = peso / (estatura * estatura);
-    return imc;
+function calcularIMC() {
+    let peso = txtPeso.value;
+    let estatura = txtEstatura.value;
+
+    if(validarCamposVacios() === false){
+        let imc = peso / Math.pow(estatura, 2);
+        parrafoResultado.innerText = imc.toFixed(2);
+    }
+    else{
+        Swal.fire({
+            icon: "warning",
+            title: "No se pudo calcular el IMC",
+            text: "Por favor revise los campos resaltados",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
+    }
 }
+function validarCamposVacios(){
+    let error = false; // por defecto se inicializa en false asumiento que no hay errores
+    if(txtPeso.value === ""){
+        txtPeso.classList.add("input-error");
+        error = true;
+    }
+    else{
+        txtPeso.classList.remove("input-error");
 
-console.log(calcularIMC(60, 1.8));
-
+    }
+    if(txtEstatura.value === ""){
+        txtEstatura.classList.add("input-error");
+        error = true;
+    }
+    else{
+        txtEstatura.classList.remove("input-error");
+    }
+    return error;
+}
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
                     5       3           15
@@ -104,3 +139,4 @@ Datos de prueba:    Palabra         Resultado esperado
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
 */
 
+btnCalcularIMC.addEventListener("click", calcularIMC);
