@@ -38,8 +38,8 @@ function calcularIMC(peso, estatura){
     return imc;
 }
 
-console.log("El IMC es: ", calcularIMC(80,1));
-console.log("El IMC es: ", calcularIMC(60,1));
+console.log("El IMC es: ", calcularIMC(80,1.7));
+console.log("El IMC es: ", calcularIMC(60,1.8));
 
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
