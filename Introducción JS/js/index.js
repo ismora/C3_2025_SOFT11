@@ -1,3 +1,10 @@
+//Guardar los inputs
+let txtPeso = document.getElementById("txtPeso");
+let txtEstatura = document.querySelector("#txtEstatura");
+let btnCalcularIMC = document.getElementById("btnCalcularIMC");
+
+let parrafoResultado = document.querySelector("#sctResultadoIMC p")
+
 // Variable: Espacio de memoria en la computadora, en donde un programa almacena un dato que puede o no cambiar durante la ejecución.  
 
 // Forma incorrecta de crear variables.
@@ -44,14 +51,42 @@ Datos de prueba en kg       m       IMC
                     80      1.7     27.7
                     60      1.8     18.5
 */
-function calcularIMC(peso,estatura){
- // let imc = peso / (estatura*estatura);
+function calcularIMC(){
+    let peso = txtPeso.value;
+    let estatura = txtEstatura.value;
+    if(validarCamposVacios() === false){
     let imc = peso /Math.pow (estatura, 2);
-    return imc;
+    parrafoResultado.innerText = imc.toFixed(2);
+    }
+    else{
+        parrafoResultado.innerText = "Por favor complete los campos vacios"
+    }
+
+   
+}
+
+function validarCamposVacios(){
+    let error = false; // Por defecto se inicializa en false asumiento que no hay errores
+    if(txtPeso.value === ""){
+        txtPeso.classList.add("input-error");
+        error = true; 
+    }
+    else {
+        txtPeso.classList.remove("input-error");
+    }
+    if (txtEstatura.value === ""){
+        txtEstatura.classList.add("input-error");
+        error = true;
+        txtEstatura.classList.add
+
+    }
+    else {
+        txtEstatura.classList.remove("input-error");
+    }
+    return error;
 }
     
- console.log("El IMC es", calcularIMC(80, 1.7));
- console.log("El IMC es", calcularIMC(60, 1.8));
+ 
 
 
 
@@ -107,3 +142,4 @@ Datos de prueba:    Palabra         Resultado esperado
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
 */
 
+btnCalcularIMC.addEventListener("click", calcularIMC);

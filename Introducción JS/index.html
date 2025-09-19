@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href = "css/imc.css">
 </head>
 <body>
+    <h1>Calculo de IMC</h1>
+    <form>
+        <div>
+            <label for="txtPeso">Peso en Kilogramos:</label>
+            <input type="number" id="txtPeso" step ="2" min="0"max = "100">
+        </div>
+
+        <div>
+            <label for="txtEstatura">Estatura en metros:</label>
+            <input type="number" id="txtEstatura" >
+        </div>
+
+        <button type="button" id="btnCalcularIMC">Calcular IMC</button>
+
+        <Section id="sctResultadoIMC">
+                <h2>IMC:</h2>
+                <p></p>
+            
+        </Section>
+
+
+    </form>
     <script src = "js/index.js"></script>
 </body>
 </html>
