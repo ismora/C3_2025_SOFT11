@@ -1,13 +1,39 @@
 // Variable: Espacio de memoria en la computadora, en donde un programa almacena un dato que puede o no cambiar durante la ejecución.  
 
 // Forma incorrecta de crear variables.
-
+/*
+var nombrePerro = "Mia"
+var nombreGato;
+nombreGato = "Stella"
+*/
 
 // Forma adecuada de crear variables.
+/*let nombrePerro = "Mia"
+let nombreGato;
+nombreGato = "Stella"
 
-
+let numeroDos = 2;
+console.log(nombrePerro)
+console.log(nombreGato)
+console.log(numeroDos)
+*/
+let nombreBanda = "Oasis"
+let nombreCancion = "Slide Away"
+let clasificacionBanda;
+clasificacionBanda = "1"
+console.log(nombreBanda)
+console.log(nombreCancion)
+console.log(clasificacionBanda)
 //Constante: Valor que no cambia durante la ejecución de un programa. 
+const PI = 3.14;
+console.log(PI);
 
+const edadMinima = 18;
+console.log(edadMinima);
+const horasDia = 24;
+console.log(horasDia);
+const distanciaSolMillas = 9000000;
+console.log(distanciaSolMillas);
 
 // Función: Bloque de código reutilizable que realiza una tarea específica.
 
@@ -19,7 +45,12 @@ Datos de prueba en kg       m       IMC
                     80      1.7     27.7
                     60      1.8     18.5
 */
+function calcularIMC(peso, estatura) {
+    let imc = peso / (estatura * estatura);
+    return imc;
+}
 
+console.log(calcularIMC(60, 1.8));
 
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
@@ -29,6 +60,23 @@ Datos de prueba:    base    altura      área
                     0       2           Error
 */
 
+function calcularArea(base, altura){
+    //Asignar altura =  base si solo hay un dato de entrada
+    if(altura === undefined){
+    altura = base;
+    }
+    else if (typeof base!= "number" || typeof altura != "Number"|| base <= 0 || altura <= 0){
+        return "Error: Ambos datos deben ser números positivos"
+
+    }
+    return base * altura;
+}
+console.log("Área del rectángulo = ", calcularArea(5, 3));
+console.log("Área del rectángulo = ", calcularArea("", 3));
+
+/*
+console.log(5 == "5");
+console.log(5 === "5");
 
 /*
 Ejercicio 1: Crear una función para convertir temperaturas entre Celsius y Fahrenheit.
@@ -55,3 +103,4 @@ Datos de prueba:    Palabra         Resultado esperado
 
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
 */
+
