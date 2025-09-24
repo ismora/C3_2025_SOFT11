@@ -1,3 +1,14 @@
+//Guardar los inputs de html
+
+let txtPeso = document.getElementById("txtPeso");
+//segunda forma usando clases CSS
+// let txtPeso = document.querySelector("#txtPeso");
+
+let txtAltura = document.getElementById("txtAltura");
+let btnCalcularIMC = document.getElementById("btnCalcularIMC");
+
+let parrafoResultado = document.querySelector("#sctResultadoIMC p")
+
 // Variable: Espacio de memoria en la computadora, en donde un programa almacena un dato que puede o no cambiar durante la ejecución.  
 
 // Forma incorrecta de crear variables.
@@ -27,15 +38,43 @@ Datos de prueba en kg       m       IMC
                     60      1.8     18.5
 */
 
-function calcularIMC(peso, estatura){
-    let imc = peso / (estatura*estatura);
-    //let imc = peso / Math.pow(estatura*estatura);
-    return imc;
+
+function calcularIMC(){
+    
+    let peso = txtPeso.value;
+    let altura = txtAltura.value;
+
+    if (validarCamposVacios() === false){
+        let imc = peso / Math.pow(altura,2);
+        parrafoResultado.innerText = "El IMC es: " + imc.toFixed(2);
+    } else {
+        Swal.fire({
+            title: "No se pudo calcular el IMC",
+            text: "Porfavor revise los campos resaltados",
+            icon: "warning",
+        });
+    }
 }
 
-console.log("El IMC es: " + calcularIMC(80, 1.7))
-console.log("El IMC es: " + calcularIMC(60, 1.8))
+function validarCamposVacios(){
+    let error = false;
 
+    if (txtPeso.value === "") {
+        txtPeso.classList.add("input-error");
+        error = true;
+    } else {
+        txtPeso.classList.remove("input-error");
+    }
+    if (txtAltura.value == "") {
+        txtAltura.classList.add("input-error");
+        error = true;
+    } else {
+        txtAltura.classList.remove("input-error");
+    }
+
+    return error;
+
+}
 
 /* Crear una función para calcular el área de un rectángulo
 Datos de prueba:    base    altura      área
@@ -86,3 +125,5 @@ Datos de prueba:    Palabra         Resultado esperado
 
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
 */
+
+btnCalcularIMC.addEventListener("click", calcularIMC);
