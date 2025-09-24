@@ -1,0 +1,29 @@
+#sctContenedor { /* id = #nombreId*/
+    border: 2px solid #000;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cuadro{
+    width: 75px;
+    height: 75px;
+    border: 2px solid #000;
+}
+
+.verde{
+    background-color: green;
+}
+
+.morado{
+    background-color: blueviolet;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.amarillo{
+    background-color: yellow;
+}
