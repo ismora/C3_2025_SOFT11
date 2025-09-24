@@ -1,0 +1,32 @@
+#sctContenedor{ /*Se le dice que el elemento con ese id se le aplica este estilo*/
+    border: 2px solid #3a3e93;
+    display: flex; /*Se le dice que el elemento es un contenedor flex*/
+    flex-direction: row; /* Cambiar el eje principal: row → eje principal horizontal y column → eje principal vertical */
+    justify-content: center; /*Alinea los elementos en el eje principal o horizontal*/
+    align-items: center; /*Alinea los elementos en el eje vertical o secundario*/
+    gap: 10px; /*Espacio entre los elementos*/
+    height: 100vh; /*Altura del contenedor*/
+}
+
+/*Clase con el nombre cuadro*/
+.cuadro{
+    width: 75px;
+    height: 75px;
+    border: 2px solid black;
+}
+
+.verde{
+    background-color: green;
+}
+
+.azul{
+    background-color: blue;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.amarillo{
+    background-color: yellow;
+}
