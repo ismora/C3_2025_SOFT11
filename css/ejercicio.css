@@ -1,0 +1,23 @@
+#contenedor{
+    width: 800px;
+    height: 500px;
+    background-color: #b8b8b9;
+    display: flex;
+    justify-content: center; /* alinear en el eje horizontal */
+    align-items: center; /*alinear en el eje vertical*/
+}
+
+.azul{
+    width: 400px;
+    height: 300px;
+    background-color: rgb(2, 2, 65);
+    display: flex;
+    justify-content: center; /* Alinear en el eje horizontal*/
+    align-items: center; /* Alinear en el eje vertical*/
+}
+
+.celeste{
+    width: 100px;
+    height: 100px;
+    background-color: #2E98F0;
+}
