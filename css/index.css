@@ -1,0 +1,38 @@
+#sctContenedor{  /* id = #nombreID */
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: column; 
+    /* Cambiar el eje principal: row → eje principal horizontal y column → eje principal vertical */
+    justify-content: center; /* alineacion de los elementos en el eje principal (horizontal) */
+    align-items: center; /* alinear los elementos en el eje secundario (vertical) */
+}
+
+.cuadro{
+    width: 75px;
+    height: 75px;
+    border: 2px solid #000;
+}
+
+.azul{
+    background-color: turquoise;
+}
+
+.morado{
+    background-color: purple;
+}
+
+.rojo{
+    background-color: darkred;
+}
+
+.naranja{
+    background-color: rgb(249, 162, 0);
+}
+
+.amarillo{
+    background-color: yellow;
+}
+
+.verde{
+    background-color: rgb(137, 219, 14);
+}
