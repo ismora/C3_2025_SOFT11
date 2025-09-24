@@ -1,0 +1,29 @@
+#sctContenedor{ /* id = #nombreId */
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: row; /* Cambiar el eje principal: row → eje principal horizontal y column → eje principal vertical */ 
+    justify-content: center; /* Alineación de los elementos en el eje principal (horizontal)*/
+    align-items: center; /* Alinear los elementos en el eje secundario (vertical)*/
+}
+
+.cuadro{ /* clase con el nombre cuadro */
+    width: 75px;
+    height: 75px;
+    border: 2px solid #000;
+}
+
+.verde{
+    background-color: green;
+}
+
+.morado{
+    background-color: blueviolet;
+}
+
+.rojo{
+    background-color: #F02548;
+}
+
+.amarillo{
+    background-color: yellow;
+}
