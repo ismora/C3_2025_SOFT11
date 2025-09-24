@@ -1,0 +1,23 @@
+#sctContenedorPrincipal{ 
+    display: flex; 
+    width: 800px;
+    height: 500px;
+    background-color: lightgrey;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuadroMediano{
+    display: flex;
+    width: 400px;
+    height: 300px;
+    background-color: #4118bd;
+    justify-content: center; /*Alinea en el horizontal*/
+    align-items: center; /*Alinea en el vertical*/
+}
+
+.cuadroPequeño{
+    width: 100px;
+    height: 100px;
+    background-color: #5197a4;
+}
