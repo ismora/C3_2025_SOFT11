@@ -1,0 +1,28 @@
+.cajaGrande{
+    height: 400px;
+}
+
+.caja{
+    height: 50px;
+}
+
+.verde{
+    background-color: green;
+}
+
+.morado{
+    background-color: blueviolet;
+}
+
+.rojo{
+    background-color: rgb(169, 79, 79);
+}
+
+.gris{
+    background-color: rgb(176, 175, 175);
+    height: 200px;
+}
+
+.fila-contenedores{
+    height: 400px;
+}
