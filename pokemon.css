@@ -1,0 +1,240 @@
+:root {
+    --gris: #919191;
+    --rojo: #E3350D;
+    --naranja: #EE6B2F;
+    --amarillo: #E6BC2F;
+    --verde: #4DAD5B;
+    --celeste: #30A7D7;
+    --azul: #0000EE;
+    --negro: #313131;
+    --morado: #855AC9;
+    --rosado: #FF90C4;
+    font-family: Arial;
+}
+
+.nav-btn {
+    height: 87px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex: 1; /*flex: 1 = flex: 1 1 0% = flex-grow: 1 (permite que el elemento crezca para llenar 
+    el espacio disponible), flex-shrink: 1 (permite que el elemento se encoja si no hay suficiente espacio) y flex-basis: 0% (tamaño base inicial del elemento antes de distribuir el espacio sobrante) */
+}
+
+.nav-btn:nth-child(1) {
+    border-bottom: 6px solid var(--gris);
+    background-color: var(--gris);
+    color: #FFF;
+}
+
+.nav-btn:nth-child(2) {
+    border-bottom: 6px solid var(--rojo);
+}
+
+.nav-btn:nth-child(2):hover {
+    border-bottom: 6px solid var(--rojo);
+    background-color: var(--rojo);
+    color: #FFF;
+}
+
+.nav-btn:nth-child(3) {
+    border-bottom: 6px solid var(--naranja);
+}
+
+.nav-btn:nth-child(3):hover {
+    border-bottom: 6px solid var(--naranja);
+    background-color: var(--naranja);
+    color: #FFF;
+}
+
+.nav-btn:nth-child(4) {
+    border-bottom: 6px solid var(--amarillo);
+}
+
+.nav-btn:nth-child(4):hover {
+    border-bottom: 6px solid var(--amarillo);
+    background-color: var(--amarillo);
+    color: #FFF;
+}
+
+.nav-btn:nth-child(5) {
+    border-bottom: 6px solid var(--verde);
+}
+
+.nav-btn:nth-child(5):hover {
+    border-bottom: 6px solid var(--verde);
+    background-color: var(--verde);
+    color: #FFF;
+}
+
+.nav-btn:nth-child(6) {
+    border-bottom: 6px solid var(--celeste);
+}
+
+.nav-btn:nth-child(6):hover {
+    border-bottom: 6px solid var(--celeste);
+    background-color: var(--celeste);
+    color: #FFF;
+}
+
+.nav-btn:nth-child(7) {
+    border-bottom: 6px solid var(--azul);
+}
+
+.nav-btn:nth-child(7):hover {
+    border-bottom: 6px solid var(--azul);
+    background-color: var(--azul);
+    color: #FFF;
+}
+
+.evento {
+    background-color: var(--amarillo);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Ocultar el contenido que se desborda para que se vean todos
+    los bordes redondeados. */
+}
+
+.evento p {
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.evento h1 {
+    color: #FFF;
+    font-size: 22px;
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.evento header {
+    min-height: 325px;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover;
+    /*Cubrir el 100% del ancho de su contenedor padre. */
+}
+
+.acero {
+    background-color: var(--rosado);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Ocultar el contenido que se desborda para que se vean todos
+    los bordes redondeados. */
+}
+
+.acero h1 {
+    color: #FFF;
+    font-size: 22px;
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.acero header {
+    min-height: 200px;
+    background-image: url(../imgs/acero.png);
+    background-size: cover;
+    /*Cubrir el 100% del ancho de su contenedor padre. */
+}
+
+.deluxe {
+    background-color: var(--naranja);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Ocultar el contenido que se desborda para que se vean todos
+    los bordes redondeados. */
+}
+
+.deluxe h1 {
+    color: #FFF;
+    font-size: 22px;
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.deluxe header {
+    min-height: 200px;
+    background-image: url(../imgs/deluxe.png);
+    background-size: cover;
+    /*Cubrir el 100% del ancho de su contenedor padre. */
+}
+
+.horizontes {
+    background-color: var(--celeste);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Ocultar el contenido que se desborda para que se vean todos
+    los bordes redondeados. */
+}
+
+.horizontes h1 {
+    color: #FFF;
+    font-size: 22px;
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.horizontes header {
+    min-height: 200px;
+    background-image: url(../imgs/horizontes.png);
+    background-size: cover;
+    /*Cubrir el 100% del ancho de su contenedor padre. */
+}
+
+.megaevolucion {
+    background-color: var(--negro);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Ocultar el contenido que se desborda para que se vean todos
+    los bordes redondeados. */
+}
+
+.megaevolucion h1 {
+    color: #FFF;
+    font-size: 22px;
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.megaevolucion header {
+    min-height: 200px;
+    background-image: url(../imgs/megaevolucion.png);
+    background-size: cover;
+    /*Cubrir el 100% del ancho de su contenedor padre. */
+}
+
+.japon {
+    background-color: var(--morado);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Ocultar el contenido que se desborda para que se vean todos
+    los bordes redondeados. */
+}
+
+.japon h1 {
+    color: #FFF;
+    font-size: 22px;
+    padding: 0 12px;
+    /* arriba y abajo y 12 a la izquierda y a la derecha. */
+}
+
+.japon header {
+    min-height: 200px;
+    background-image: url(../imgs/japon.png);
+    background-size: cover;
+    /*Cubrir el 100% del ancho de su contenedor padre. */
+}
+
+.row{
+    display: flex;
+    margin: 5px;
+    column-gap: 10px;
+}
+
+

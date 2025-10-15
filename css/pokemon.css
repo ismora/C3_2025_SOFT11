@@ -1,0 +1,221 @@
+:root {
+    --gris: #919191;
+    --rojo: #E3350D;
+    --naranja: #EE6B2F;
+    --amarillo: #E6BC2F;
+    --verde: #4DAD5B;
+    --celeste: #30A7D7;
+    --azul: #1B53BA;
+    --negro: #313131;
+    --morado: #855AC9;
+    --rosado: #FF90C4;
+    font-family: Arial;
+
+    --fondoPrincipal: white;
+    --textoPrincipal: #212529;
+    --textoSecundario: white
+}
+
+body {
+    background-color: var(--fondoPrincipal);
+    color: var(--textoPrincipal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    margin-bottom: 40px;
+}
+
+.nav-btn {
+    height: 87px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+@media (min-width:992px){
+    .nav-btn {
+        flex: 1;
+        /*flex: 1 = flex: 1 1 0% = flex-grow: 1 (permite que el elemento crezca para llenar el espacio disponible), flex-shrink: 1 (permite que el elemento se encoja si no hay suficiente espacio) y flex-basis: 0% (tamaño base inicial del elemento antes de distribuir el espacio sobrante) */
+    }
+}
+
+/* De 576px a 991.98px */
+@media (min-width:576px) and (max-width: 991.98px){
+    p{
+        color: #E3350D;
+        font-size: 25px;
+    }
+
+    header{
+        margin: 50px;
+    }
+
+    .evento p {
+        font-size: 8px;
+    }
+}
+
+.nav-btn:nth-child(1) {
+    border-bottom: 6px solid var(--gris);
+    background-color: var(--gris);
+    color: var(--textoSecundario);
+}
+
+.nav-btn:nth-child(2) {
+    border-bottom: 6px solid var(--rojo);
+}
+
+.nav-btn:nth-child(2):hover {
+    background-color: var(--rojo);
+    color: var(--textoSecundario);
+}
+
+.nav-btn:nth-child(3) {
+    border-bottom: 6px solid var(--naranja);
+}
+
+.nav-btn:nth-child(3):hover {
+    background-color: var(--naranja);
+    color: var(--textoSecundario);
+}
+
+.nav-btn:nth-child(4) {
+    border-bottom: 6px solid var(--amarillo);
+}
+
+.nav-btn:nth-child(4):hover {
+    background-color: var(--amarillo);
+    color: var(--textoSecundario);
+}
+
+.nav-btn:nth-child(5) {
+    border-bottom: 6px solid var(--verde);
+}
+
+.nav-btn:nth-child(5):hover {
+    background-color: var(--verde);
+    color: var(--textoSecundario);
+}
+
+.nav-btn:nth-child(6) {
+    border-bottom: 6px solid var(--celeste);
+}
+
+.nav-btn:nth-child(6):hover {
+    background-color: var(--celeste);
+    color: var(--textoSecundario);
+}
+
+.nav-btn:nth-child(7) {
+    border-bottom: 6px solid var(--azul);
+}
+
+.nav-btn:nth-child(7):hover {
+    background-color: var(--azul);
+    color: var(--textoSecundario);
+}
+
+h1 {
+    color: var(--textoSecundario);
+    font-size: 22px;
+    padding: 0 12px;  /*= 0 arriba - abajo y 12 a la izquierda - derecha */
+}
+
+.evento {
+    background-color: var(--amarillo);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden; /* Ocultar el contenido que se desborda para que se vean todos los bordes redoindeados*/
+}
+
+.evento p {
+    padding: 0 12px;
+}
+
+.evento header {
+    min-height: 325px;
+    width: 100%;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover; /*Cubrir el 100% del ancho de su contenedor padre, recortando lo que sobra si es necesario*/
+}
+
+.acero {
+    background-color: var(--rosado);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden; /*Ocultar el contenido que se desborda para que se vean todos los bordes redondeados. */
+}
+
+.acero header {
+    min-height: 200px;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover;
+}
+
+.deluxe {
+    background-color: var(--naranja);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.deluxe header {
+    min-height: 200px;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover;
+}
+
+.horizontes {
+    background-color: var(--celeste);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.horizontes header {
+    min-height: 200px;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover;
+}
+
+.horizontes h1 {
+    font-size: 20px;
+}
+
+.megaevolucion {
+    background-color: var(--negro);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.megaevolucion header {
+    min-height: 165px;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover; 
+}
+
+.japon {
+    background-color: var(--morado);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden; 
+    margin: 0px;
+}
+
+.japon header {
+    min-height: 180px;
+    background-image: url(../imgs/pokemon-tcg.png);
+    background-size: cover;
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fondoPrincipal: black;
+        --textoPrincipal: white;    
+    }
+}
