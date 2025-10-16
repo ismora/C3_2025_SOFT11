@@ -1,0 +1,105 @@
+h1,
+h2,
+p {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Times New Roman";
+    margin: 0px;
+}
+
+.tituloSeccion, .descripcionSeccion{
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-family: "Century Gothic";
+}
+
+.tituloSeccion{
+    font-size: 18px;
+    color: rgb(4, 4, 66);
+    margin-top: 30px;
+}
+
+/* Al usar ::before en CSS, los lectores de pantalla lo ignoran porque asumen que es decorativo */
+.tituloSeccion::before {
+  content: "\f0eb";              /* Código del ícono de https://fontawesome.com/*/
+  font-family: "Font Awesome 6 Free"; /* Nombre de la fuente */
+  font-weight: 900;              /* Para íconos sólidos */
+  margin-right: 8px;             /* Espacio entre ícono y texto */
+  display: inline-block;         /* Para que se comporte como ícono */
+}
+
+.correcto, .incorrecto{
+    display: block;
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    font-size: 18px;
+}
+
+.incorrecto {
+    color: #ff6b6b;
+    border-left: 4px solid red;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.correcto {
+    color: #027715;
+    border-left: 4px solid green;
+    background: rgba(81, 207, 102, 0.1);
+}
+
+img{
+    max-height: 200px;
+}
+
+/* Incorrecto - contraste insuficiente */
+.textoGris {
+  color: #999999;
+  background-color: #FFFFFF;
+}
+
+/* Correcto - contraste adecuado */
+.textoOscuro {
+  color: #333333;
+  background-color: #FFFFFF;
+}
+
+/* Para textos grandes, ratio mínimo 3:1 */
+.tituloGrande {
+  color: #555555;
+  background-color: #FFFFFF;
+}
+
+/* Para texto normal, ratio mínimo 4.5:1 */
+.textoNormal {
+  color: #222222;
+  background-color: #FFFFFF;
+}
+
+.estiloNoAccesible{
+    outline: none; /* outline: none → Elimina el indicador visual de foco */
+}
+
+.instruccion {
+  font-size: 14px;
+  color: #6c757d;
+  display: block;
+  margin-top: 10px;
+}
+
+button, a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/recomendaciones.css">
+</head>
+
+<body>
+    <section>
+        <h1 class="tituloSeccion">Estructura semántica</h1>
+        <p class="descripcionSeccion">El HTML semántico proporciona significado a la estructura, ayudando a los lectores
+            de pantalla a navegar e interpretar el contenido.</p>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Estructura semántica incorrecta --&gt;</span>
+        <div class="header">
+            <div class="titulo">Mi sitio web</div>
+        </div>
+        <div class="contenido">
+            <div class="texto-grande">Subtítulo</div>
+            <div>Párrafo de texto</div>
+        </div>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Estructura semántica correcta --&gt;</span>
+        <header>
+            <h1>Mi sitio web</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Subtítulo</h2>
+                <p>Párrafo de texto</p>
+            </section>
+        </main>
+
+        <!-- Elementos semánticos principales:
+            <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>
+            Encabezados jerárquicos: <h1> a <h6>  -->
+
+    </section>
+
+    <section>
+        <h1 class="tituloSeccion">Imágenes con texto alternativo</h1>
+        <p class="descripcionSeccion">Las personas con discapacidad visual dependen de descripciones textuales para
+            entender el contenido visual.</p>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Imagen sin texto alternativo y sin atributo alt --&gt;</span>
+        <img src="imgs/lenguajes.svg">
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Imagen con texto alternativo (no decorativa) --&gt;</span>
+        <img src="imgs/lenguajes.svg"
+            alt="Gráfico de barras mostrando crecimiento de ventas del 15% en el último trimestre">
+
+        <!-- Imágenes decorativas -->
+        <span class="correcto">&lt;!-- Imagen decorativa con atributo alt="" --&gt;</span>
+        <img src="imgs/lenguajes.svg" alt="">
+
+        <!-- Recomendaciones: 
+            Describir la función, no solo el contenido
+            Ser conciso pero informativo
+            Para imágenes decorativas, usar alt=""-->
+    </section>
+
+    <section>
+        <h1 class="tituloSeccion">Constraste de colores</h1>
+        <p class="descripcionSeccion">Garantiza que el texto sea legible para personas con baja visión o daltonismo.
+            Según la WCAG, el contraste entre el texto y su fondo debe ser de al menos 4.5:1 para el texto normal y de
+            3:1 para el texto grande, para asegurar que el contenido sea legible y fácil de leer.</p>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Contraste insuficiente --&gt;</span>
+        <p class="textoGris">Ejemplo de contraste entre color de fondo y el texto (contrast ratio: 2.84:1)</p>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Contraste suficiente --&gt;</span>
+        <p class="textoOscuro">Contraste adecuado (contrast ratio: 12.63:1)</p>
+        <p class="tituloGrande">Contraste adecuado para textos grandes, ratio mínimo 3:1 (contrast ratio: 7.45:1)</p>
+        <p class="tituloGrande">Contraste adecuado para texto normal, ratio mínimo 4.5:1 (contrast ratio: 15.9:1)</p>
+
+    </section>
+
+
+    <section>
+        <h1 class="tituloSeccion">Navegación mediante el teclado</h1>
+        <p class="descripcionSeccion">Todos los elementos los elementos interactivos y de navegación deben ser
+            completamente operables usando solo el teclado, con un orden lógico de tabulación y indicadores visuales
+            claros del foco.</p>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Navegación inaccesible (elementos &lt;div&gt; no son enfocables por teclado)
+            --&gt;</span>
+        <nav>
+            <div class="menu-item" onclick="irA()">Inicio</div>
+            <div class="menu-item" onclick="irA()">Servicios</div>
+            <div class="menu-item" onclick="irA()">Contacto</div>
+        </nav>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Navegación mediante teclado --&gt;</span>
+        <nav aria-label="Navegación principal">
+            <ul role="menubar">
+                <li role="none">
+                    <a href="#inicio" role="menuitem" class="enlace-nav" id="menu-inicio">
+                        Inicio
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#servicios" role="menuitem" class="enlace-nav" id="menu-servicios">
+                        Servicios
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#contacto" role="menuitem" class="enlace-nav" id="menu-contacto">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Sin indicador visual del foco --&gt;</span>
+        <button class="estiloNoAccesible">Enviar</button>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Con indicador visual del foco y rol ARIA --&gt;</span>
+        <button aria-describedby="descripcion-enviar">Enviar formulario</button>
+        <div id="descripcion-enviar" class="sr-only">
+            Presione Enter para enviar la información del formulario
+        </div>
+    </section>
+
+
+    <section>
+        <h1 class="tituloSeccion">Formularios</h1>
+        <p class="descripcionSeccion">Deben ser comprensibles, navegables y usable para todos los usuarios, con
+            etiquetas claras, agrupación lógica y mensajes de error descriptivos.</p>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Etiqueta no asociada al campo de texto --&gt;</span>
+        <div>
+            Nombre completo:
+            <input type="text">
+        </div>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Campo de texto con etiqueta y opcional instrucciones --&gt;</span>
+        <div>
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required aria-required="true"
+                aria-describedby="instruccionNombre">
+            <div class="mensaje-error" id="error-nombre" role="alert"></div>
+            <span id="instruccionNombre" class="instruccion"> Ingrese su nombre completo como aparece en su documento de
+                identidad </span>
+        </div>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Agrupación visual de campos relacionados --&gt;</span>
+        <fieldset>
+            <legend>Método de contacto preferido</legend>
+
+            <input type="radio" id="contacto-email" name="contacto" value="email">
+            <label for="contacto-email">Email</label>
+
+            <input type="radio" id="contacto-telefono" name="contacto" value="telefono">
+            <label for="contacto-telefono">Teléfono</label>
+        </fieldset>
+
+        <!-- Incorrecto -->
+        <span class="incorrecto">&lt;!-- Grupo sin agrupación semántica --&gt;</span>
+        <div>
+            <span>Edad:</span>
+            <input type="radio" name="edad" value="menor"> Menor de 18
+            <input type="radio" name="edad" value="adulto"> 18-65
+            <input type="radio" name="edad" value="mayor"> Mayor de 65
+        </div>
+
+        <!-- Correcto -->
+        <span class="correcto">&lt;!-- Agrupación sémantica y visual --&gt;</span>
+        <fieldset>
+            <legend>Grupo de edad*</legend>
+
+            <div>
+                <input type="radio" id="edadMenor" value="menor" required>
+                <label for="edadMenor">Menor de 18 años</label>
+            </div>
+
+            <div>
+                <input type="radio" id="edadAdulto" value="adulto">
+                <label for="edadAdulto">18 a 65 años</label>
+            </div>
+
+            <div>
+                <input type="radio" id="edadMayor" value="mayor">
+                <label for="edadMayor">Mayor de 65 años</label>
+            </div>
+        </fieldset>
+    </section>
+
+    <section>
+        <h1 class="tituloSeccion">ARIA (Accessible Rich Internet Applications)</h1>
+        <p class="descripcionSeccion"> ARIA es un conjunto de atributos que complementan el HTML para hacer que los
+            contenidos web y las aplicaciones sean más accesibles. Se usa cuando el HTML no puede expresar adecuadamente
+            la semántica de componentes complejos. </p>
+
+        <!-- Atributos -->
+        <span class="correcto">&lt;!-- Roles --&gt;</span>
+        <p class="descripcionSeccion">Definen el tipo de elemento o widget.</p>
+
+        <button role="tab">Pestaña 1</button>
+        <div role="tabpanel">Contenido.</div>
+
+        <!-- Propiedades  -->
+        <span class="correcto">&lt;!-- Propiedad: aria-label --&gt;</span>
+        <p class="descripcionSeccion">Proporciona una etiqueta directa cuando el elemento no tiene texto visible.</p>
+
+        <button aria-label="Cerrar ventana de diálogo" onclick=""> X </button>
+
+        <a href="/" aria-label="Carrito de compras"> 🛒 </a>
+
+        <button aria-label="Buscar en el sitio web" onclick=""> 🔍 </button>
+
+        <span class="correcto">&lt;!-- Propiedad: aria-labelledby --&gt;</span>
+        <p class="descripcionSeccion">Asocia un elemento con otro que lo etiqueta, usando ID. Se recomienda utilizar
+            para agrupar múltiples elementos o cuando el texto de la etiqueta ya existe en otro elemento.</p>
+
+        <div class="form-group">
+            <span id="name-label">Nombre completo</span>
+            <span id="name-required" class="required">*</span>
+            <input type="text" aria-labelledby="name-label name-required">
+        </div>
+
+        <span class="correcto">&lt;!-- Propiedad: aria-describedby --&gt;</span>
+        <p class="descripcionSeccion">Oculta elementos de los lectores de pantalla. </p>
+
+        <button aria-describedby="export-desc" onclick=""> Exportar </button>
+        <span id="export-desc" class="sr-only"> Exportar todos los datos a formato CSV </span>
+
+        <span class="correcto">&lt;!-- Propiedad: aria-hidden --&gt;</span>
+        <p class="descripcionSeccion">Asocia un elemento con otro que lo etiqueta, usando ID.</p>
+
+        <!-- Icono decorativo sin significado -->
+        <span aria-hidden="true">⭐🌙</span>
+
+    </section>
+
+    <section>
+        <h1 class="tituloSeccion">Diseño responsivo</h1>
+        <p class="descripcionSeccion">Crear diseños que se adapten a diferentes tamaños de pantalla y permitan el zoom
+            sin romper la funcionalidad o legibilidad.</p>
+
+    </section>
+
+    <section>
+        <h1 class="tituloSeccion">Validación y pruebas</h1>
+        <p class="descripcionSeccion">Implementar un proceso sistemático de pruebas que combine herramientas
+            automatizadas, verificación manual y testing con usuarios reales.</p>
+
+    </section>
+    
+</body>
+
+</html>
