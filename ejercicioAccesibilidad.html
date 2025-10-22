@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -18,37 +18,52 @@
         <form>
             <!-- Campo nombre - Sin label, placeholder como etiqueta -->
             <div>
+                <label>
+                <span>Nombre:</span>
                 <input type="text" placeholder="Ingrese su nombre">
+                </label>
             </div>
             
             <!-- Campo email - Sin tipo correcto, sin label -->
             <div>
+                <label>
                 <span>Email:</span>
-                <input type="text">
+                <input type="text" placeholder="Gummybear1@Gmail.com">
+                </label>
             </div>
             
             <!-- Teléfono - Sin tipo correcto, sin instrucciones -->
             <div>
-                <input type="text" placeholder="Teléfono">
+                <label>
+                <span>Teléfono:</span>
+                <input type="text" placeholder="Ingrese su Teléfono">
+                </label>
             </div>
             
             <!-- Asunto - Select sin label, opciones sin descripción -->
             <div>
+                <label>
+                    <span>Asunto:</span>
                 <select>
                     <option>Eliga un asunto</option>
                     <option>Soporte</option>
                     <option>Ventas</option>
                     <option>General</option>
                 </select>
+                </label>
             </div>
             
             <!-- Tipo de consulta - Radios sin agrupar, sin labels asociados -->
             <div>
-                <span>Tipo de consulta:</span>
+                <fieldset>
+                <legend>Tipo de consulta:</legend>
                 <br>
+                <label>
                 <input type="radio" name="consulta"> Urgente
+                </label>
                 <input type="radio" name="consulta"> Normal
                 <input type="radio" name="consulta"> Baja prioridad
+                </fieldset>
             </div>
             
             <!-- Adjuntar archivo - Input file sin label -->
