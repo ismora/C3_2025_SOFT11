@@ -10,110 +10,134 @@
 </head>
 
 <body>
-    <p>Ejercicio: Identificar y corregir los problemas de accesibilidad en está página web mediante pruebas manuales y automáticas, implementando las mejoras necesarias para cumplir con los estándares WCAG 2.1 nivel AA.</p>
+    <p>Ejercicio: Identificar y corregir los problemas de accesibilidad en está página web mediante pruebas manuales y
+        automáticas, implementando las mejoras necesarias para cumplir con los estándares WCAG 2.1 nivel AA.</p>
 
     <div>
         <div>Formulario de Contacto</div>
-        
+
         <form>
             <!-- Campo nombre - Sin label, placeholder como etiqueta -->
             <div>
-                <input type="text" placeholder="Ingrese su nombre">
+                <span>Nombre:</span>
+                <input type="text" placeholder="Ingrese su nombre" aria-label="Nombre">
             </div>
-            
+
             <!-- Campo email - Sin tipo correcto, sin label -->
             <div>
                 <span>Email:</span>
-                <input type="text">
+                <input type="email" placeholder="Ingrese su correo" aria-label="Email">
             </div>
-            
+
             <!-- Teléfono - Sin tipo correcto, sin instrucciones -->
             <div>
-                <input type="text" placeholder="Teléfono">
+                <span>Telefono:</span>
+                <input type="tel" placeholder="Ingrese su teléfono" aria-label="Telefono">
             </div>
-            
+
             <!-- Asunto - Select sin label, opciones sin descripción -->
             <div>
-                <select>
-                    <option>Eliga un asunto</option>
-                    <option>Soporte</option>
-                    <option>Ventas</option>
-                    <option>General</option>
+                <select type="dropdown" aria-label="Asunto">
+                    <option aria-lable="Elija Asunto">Elija un asunto</option>
+                    <option aria-label="Soporte">Soporte</option>
+                    <option aria-label="Ventas">Ventas</option>
+                    <option aria-lable="General">General</option>
                 </select>
             </div>
-            
+
             <!-- Tipo de consulta - Radios sin agrupar, sin labels asociados -->
             <div>
                 <span>Tipo de consulta:</span>
-                <br>
-                <input type="radio" name="consulta"> Urgente
-                <input type="radio" name="consulta"> Normal
-                <input type="radio" name="consulta"> Baja prioridad
+
+                <input type="radio" name="consulta" aria-label="Opcion Urgente"> Urgente
+                <input type="radio" name="consulta" aria-label="Opcion Normal"> Normal
+                <input type="radio" name="consulta" aria-label="Opcion baja prioridad"> Baja prioridad
             </div>
-            
+
             <!-- Adjuntar archivo - Input file sin label -->
             <div>
-                <input type="file">
+                <input type="file" aria-label="Buton de ajuntar archivo">
             </div>
-            
+
             <!-- Mensaje - Textarea sin label, placeholder como etiqueta -->
             <div>
-                <textarea placeholder="Escribe tu mensaje aquí..." rows="5"></textarea>
+                <textarea placeholder="Escribe tu mensaje aquí..." rows="5" aria-label="Caja de texto"></textarea>
             </div>
-            
+
             <!-- Suscripción - Checkbox sin label asociado -->
             <div>
-                <input type="checkbox"> Suscribirse al newsletter
+                <input type="checkbox" aria-label="checkbox subscripcion newsletter"> Suscribirse al newsletter
             </div>
-            
+
             <!-- Botones - Sin tipo, sin etiquetas descriptivas -->
             <div>
-                <button>Enviar</button>
-                <button>Borrar</button>
+                <button type="button" aria-label="Boton de enviar">Enviar</button>
+                <button type="button" aria-label="Boton de borrar">Borrar</button>
             </div>
         </form>
-        
+
         <!-- Imágenes decorativas sin texto alternativo -->
         <div>
-            <img src="decorative-line.png">
-            <img src="icon-phone.png" style="width: 20px; height: 20px;">
-            <img src="background-pattern.jpg" width="100%" height="50">
+            <img src="decorative-line.png" alt="Linea decorativa">
+            <img src="icon-phone.png" style="width: 20px; height: 20px;" alt="Icono telefono">
+            <img src="background-pattern.jpg" width="100%" height="50" alt="diseno de fondo">
         </div>
-        
+
         <!-- Enlaces sin texto descriptivo -->
         <div>
-            <a href="#">Click aquí</a> para más información o 
-            <a href="#">visita esto</a>.
+            <a href="#" aria-label="link de mas informacion">Click aquí</a> para más información o
+            <a href="#" aria-label="link para visitar esto">visita esto</a>.
         </div>
-        
+
         <!-- Tabla de horarios sin estructura semántica -->
         <div>
-            <div>Horarios de Atención</div>
             <div>
-                <div>Lunes a Viernes</div>
-                <div>9:00 - 18:00</div>
-            </div>
-            <div>
-                <div>Sábados</div>
-                <div>10:00 - 14:00</div>
+                <h1>Horarios de Atención</h1>
+                <div>
+                    <h2>Lunes a Viernes</h2>
+                    <div>
+                        <h3>9:00 - 18:00</h3>
+                    </div>
+                </div>
+                <div>
+                    <h2>Sábados</h2>
+                    <div>
+                        <h3>10:00 - 14:00</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- Lista no semántica -->
-        <div>
-            <div>Servicios</div>
-            <div>• Consultoría</div>
-            <div>• Desarrollo</div>
-            <div>• Soporte</div>
-        </div>
-        
+        <ul>
+            <li>
+                <a>Servicios</a>
+            </li>
+            <li>
+                <a>Consultoría</a>
+            </li>
+            <li>
+                <a>Desarrollo</a>
+            </li>
+            <li>
+                <a>Soporte</a>
+            </li>
+        </ul>
+
         <!-- Encabezados sin jerarquía -->
         <div>
-            <div>Información Importante</div>
-            <div>Políticas de Privacidad</div>
-            <div>Términos y Condiciones</div>
+            <h1>
+                <a>Información Importante</a>
+            </h1>
+            <h2>
+                <a>Políticas de Privacidad</a>
+            </h2>
+            <h3>
+                <a>Términos y Condiciones</a></h3>
         </div>
     </div>
 </body>
 
 </html>
+
+<!-- Falta de labels, falta de ul y ordenar li, falta de jerarquias h1, h2, etc. falta de elementos a para links, falta de alt para imagenes, se agrego esto por mi -->
