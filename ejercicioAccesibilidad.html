@@ -18,86 +18,108 @@
         <form>
             <!-- Campo nombre - Sin label, placeholder como etiqueta -->
             <div>
-                <input type="text" placeholder="Ingrese su nombre">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
             </div>
             
             <!-- Campo email - Sin tipo correcto, sin label -->
             <div>
-                <span>Email:</span>
-                <input type="text">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico">
             </div>
             
             <!-- Teléfono - Sin tipo correcto, sin instrucciones -->
             <div>
-                <input type="text" placeholder="Teléfono">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890">
             </div>
             
             <!-- Asunto - Select sin label, opciones sin descripción -->
             <div>
-                <select>
-                    <option>Eliga un asunto</option>
-                    <option>Soporte</option>
-                    <option>Ventas</option>
-                    <option>General</option>
+                <label for="asunto">Asunto:</label>
+                <select id="asunto" name="asunto">
+                    <option value="">Elija un asunto</option>
+                    <option value="soporte">Soporte</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="general">General</option>
                 </select>
             </div>
-            
+
             <!-- Tipo de consulta - Radios sin agrupar, sin labels asociados -->
-            <div>
-                <span>Tipo de consulta:</span>
-                <br>
-                <input type="radio" name="consulta"> Urgente
-                <input type="radio" name="consulta"> Normal
-                <input type="radio" name="consulta"> Baja prioridad
-            </div>
+            <fieldset>
+                <legend>Tipo de consulta:</legend>
+                <div>
+                    <input type="radio" id="urgente" name="consulta" value="urgente">
+                    <label for="urgente">Urgente</label>
+                </div>
+                <div>
+                    <input type="radio" id="normal" name="consulta" value="normal">
+                    <label for="normal">Normal</label>
+                </div>
+                <div>
+                    <input type="radio" id="baja" name="consulta" value="baja">
+                    <label for="baja">Baja prioridad</label>
+                </div>
+            </fieldset>
             
             <!-- Adjuntar archivo - Input file sin label -->
             <div>
-                <input type="file">
+                <label for="archivo">Adjuntar archivo:</label>
+                <input type="file" id="archivo" name="archivo">
             </div>
             
             <!-- Mensaje - Textarea sin label, placeholder como etiqueta -->
             <div>
-                <textarea placeholder="Escribe tu mensaje aquí..." rows="5"></textarea>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
             </div>
             
             <!-- Suscripción - Checkbox sin label asociado -->
             <div>
-                <input type="checkbox"> Suscribirse al newsletter
+                <label for="suscripcion">Suscribirse al newsletter</label>
+                <input type="checkbox" id="suscripcion" name="suscripcion">
             </div>
             
             <!-- Botones - Sin tipo, sin etiquetas descriptivas -->
             <div>
-                <button>Enviar</button>
-                <button>Borrar</button>
+                <button type="submit">Enviar mensaje</button>
+                <button type="reset">Borrar formulario</button>
             </div>
         </form>
         
         <!-- Imágenes decorativas sin texto alternativo -->
         <div>
-            <img src="decorative-line.png">
-            <img src="icon-phone.png" style="width: 20px; height: 20px;">
-            <img src="background-pattern.jpg" width="100%" height="50">
+            <img src="decorative-line.png" alt="">
+            <img src="icon-phone.png" alt="" style="width: 20px; height: 20px;">
+            <img src="background-pattern.jpg" alt="" width="100%" height="50">
         </div>
         
         <!-- Enlaces sin texto descriptivo -->
         <div>
-            <a href="#">Click aquí</a> para más información o 
-            <a href="#">visita esto</a>.
+            <a href="opcion1.html">Click aquí</a> para más información o 
+            <a href="opcion2.html">visita esto</a>.
         </div>
         
         <!-- Tabla de horarios sin estructura semántica -->
-        <div>
-            <div>Horarios de Atención</div>
-            <div>
-                <div>Lunes a Viernes</div>
-                <div>9:00 - 18:00</div>
-            </div>
-            <div>
-                <div>Sábados</div>
-                <div>10:00 - 14:00</div>
-            </div>
-        </div>
+        <h1>Horarios de Atención</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes a Viernes</td>
+                        <td>9:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sábados</td>
+                        <td>10:00 - 14:00</td>
+                    </tr>
+                </tbody>
+            </table>
         
         <!-- Lista no semántica -->
         <div>
@@ -109,9 +131,9 @@
         
         <!-- Encabezados sin jerarquía -->
         <div>
-            <div>Información Importante</div>
-            <div>Políticas de Privacidad</div>
-            <div>Términos y Condiciones</div>
+            <h1>Información Importante</h1>
+            <h2>Políticas de Privacidad</h2>
+            <h3>Términos y Condiciones</h3>
         </div>
     </div>
 </body>
