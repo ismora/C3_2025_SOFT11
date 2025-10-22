@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buenas prácticas de accesibilidad</title>
+
+  <!-- FontAwesome sólo si lo necesitas -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+
+    /* Skip link (visible al foco) */
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      z-index: 100;
+    }
+    .skip-link:focus{
+      left: 1rem;
+      top: 1rem;
+      width:auto;
+      height:auto;
+      padding: .5rem .75rem;
+      background:var(--brand);
+      color:white;
+      border-radius:4px;
+      box-shadow:0 2px 6px rgba(0,0,0,.2);
+    }
+
+    /* Visually-hidden utility */
+    .sr-only{
+      position:absolute!important;
+      width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+    }
+
+    /* Headings */
+    .tituloSeccion{font-size:1.25rem;margin-top:1.25rem;}
+
+    /* Focus styles */
+    :focus{outline:none;}
+    :focus-visible{
+      outline: 3px solid var(--brand);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible{
+      box-shadow: 0 0 0 4px rgba(0,95,204,0.15);
+    }
+
+    /* Contrast examples */
+    .textoGris{color: #7a7a7a; background:transparent;} /* incorrecto ejemplo */
+    .textoOscuro{color:#0b0b0b;background:#fff;padding:.25rem 0;}
+
+    /* Form styles */
+    form {max-width:760px;margin-top:1rem;}
+    label{display:block;font-weight:600;margin-bottom:.25rem;}
+    input[type="text"], input[type="email"]{
+      width:100%;padding:.5rem;border:1px solid #cfcfcf;border-radius:6px;
+    }
+    fieldset{border:1px solid #e6e6e6;padding: .75rem;border-radius:6px;margin-top:.5rem;}
+    legend{font-weight:700;}
+
+    .mensaje-error{color:var(--error);font-weight:600;margin-top:.25rem;}
+    .hidden{display:none !important;}
+
+    /* botones */
+    button{padding:.5rem .75rem;border-radius:6px;border:1px solid #ccc;background:#f7f7f7;cursor:pointer;}
+    button.primary{background:var(--brand);color:white;border-color:var(--brand);}
+
+    /* menu nav */
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem;}
+    nav a{color:var(--brand);text-decoration:none;}
+
+    /* small responsive */
+    @media (max-width:480px){
+      nav ul{flex-direction:column;gap:.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+  <header role="banner" aria-labelledby="titulo-sitio">
+    <h1 id="titulo-sitio">Mi sitio web</h1>
+
+    <!-- Navegación "incorrecta" -->
+    <span class="incorrecto">&lt;!-- Navegación inaccesible --&gt;</span>
+    <nav>
+      <div class="menu-item" onclick="irA()">Inicio</div>
+      <div class="menu-item" onclick="irA()">Servicios</div>
+      <div class="menu-item" onclick="irA()">Contacto</div>
+    </nav>
+
+    <!-- NAV accesible re-escrito -->
+    <span class="correcto">&lt;!-- Navegación accesible con teclado y roles ARIA --&gt;</span>
+    <nav aria-label="Navegación principal" aria-labelledby="titulo-sitio">
+      <ul role="menubar">
+        <li role="none"><a role="menuitem" href="#inicio" id="menu-inicio">Inicio</a></li>
+        <li role="none"><a role="menuitem" href="#servicios" id="menu-servicios">Servicios</a></li>
+        <li role="none"><a role="menuitem" href="#contacto" id="menu-contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="contenido-principal" role="main" tabindex="-1">
+    <section aria-labelledby="subtitulo1">
+      <h2 id="subtitulo1" class="tituloSeccion">Subtítulo</h2>
+      <p>Párrafo de texto que introduce el contenido principal del sitio.</p>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Imágenes con texto alternativo</h2>
+      <p class="descripcionSeccion">Las personas con discapacidad visual dependen de descripciones textuales para entender el contenido visual.</p>
+
+      <!-- Incorrecto -->
+      <span class="incorrecto">&lt;!-- Imagen sin texto alternativo --&gt;</span>
+      <img src="imgs/lenguajes.svg" alt="">
+
+      <!-- Correcto (mejorado) -->
+      <span class="correcto">&lt;!-- Imagen con texto alternativo descriptivo --&gt;</span>
+      <figure>
+        <img src="imgs/lenguajes.svg"
+             alt="Gráfico de barras que muestra un aumento del 15% en las ventas del último trimestre">
+        <figcaption>Gráfico ilustrativo de crecimiento de ventas trimestrales.</figcaption>
+      </figure>
+
+      <!-- Imagen decorativa -->
+      <span class="correcto">&lt;!-- Imagen decorativa (oculta a lectores de pantalla) --&gt;</span>
+      <img src="imgs/decorativa.svg" alt="" aria-hidden="true">
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Contraste de colores</h2>
+
+      <!-- Incorrecto -->
+      <span class="incorrecto">&lt;!-- Contraste insuficiente --&gt;</span>
+      <p class="textoGris">Ejemplo de contraste entre color de fondo y el texto (contrast ratio: 2.84:1)</p>
+
+      <!-- Correcto -->
+      <span class="correcto">&lt;!-- Contraste accesible --&gt;</span>
+      <p class="textoOscuro">Contraste adecuado (ratio ≥ 4.5:1 para texto normal).</p>
+      <p style="font-size:1.25rem;">Contraste adecuado para texto grande (ratio ≥ 3:1).</p>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Navegación mediante el teclado</h2>
+      <p class="descripcionSeccion">Todos los elementos interactivos deben ser operables solo con teclado.</p>
+
+      <!-- Correcto: botón accesible -->
+      <span class="correcto">&lt;!-- Botón accesible con descripción ARIA --&gt;</span>
+      <button aria-describedby="descripcion-enviar" type="button" class="primary">Enviar formulario</button>
+      <div id="descripcion-enviar" class="sr-only">Presione Enter para enviar la información del formulario.</div>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Formularios</h2>
+      <p class="descripcionSeccion">Formularios con labels, agrupación y mensajes de error accesibles.</p>
+
+      <!-- Incorrecto -->
+      <span class="incorrecto">&lt;!-- Etiqueta no asociada --&gt;</span>
+      <div>Nombre completo: <input type="text" /></div>
+
+      <!-- Correcto (mejorado) -->
+      <span class="correcto">&lt;!-- Campo con etiqueta, instrucciones y validación --&gt;</span>
+      <form id="contact-form" novalidate aria-labelledby="formulario-contacto">
+        <h3 id="formulario-contacto">Formulario de contacto</h3>
+
+        <div>
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" required aria-required="true" aria-describedby="instruccionNombre error-nombre" />
+          <div id="instruccionNombre" class="instruccion sr-only">Ingrese su nombre completo como aparece en su documento de identidad.</div>
+          <div id="error-nombre" class="mensaje-error" role="alert" aria-live="assertive"></div>
+        </div>
+
+        <fieldset>
+          <legend>Método de contacto preferido</legend>
+          <div>
+            <input id="contacto-email" type="radio" name="contacto" value="email" />
+            <label for="contacto-email">Email</label>
+          </div>
+          <div>
+            <input id="contacto-telefono" type="radio" name="contacto" value="telefono" />
+            <label for="contacto-telefono">Teléfono</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Grupo de edad *</legend>
+
+          <div>
+            <input type="radio" id="edadMenor" name="edad" value="menor" required />
+            <label for="edadMenor">Menor de 18 años</label>
+          </div>
+
+          <div>
+            <input type="radio" id="edadAdulto" name="edad" value="adulto" />
+            <label for="edadAdulto">18 a 65 años</label>
+          </div>
+
+          <div>
+            <input type="radio" id="edadMayor" name="edad" value="mayor" />
+            <label for="edadMayor">Mayor de 65 años</label>
+          </div>
+        </fieldset>
+
+        <div style="margin-top:.75rem;">
+          <button type="submit" class="primary">Enviar</button>
+          <button type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">ARIA (Accessible Rich Internet Applications)</h2>
+      <p class="descripcionSeccion">ARIA complementa HTML cuando el HTML por sí solo no puede expresar la semántica.</p>
+
+      <!-- Tabs accesibles ejemplo simple -->
+      <div role="tablist" aria-label="Secciones de contenido">
+        <button role="tab" id="tab1" aria-controls="panel1" aria-selected="true">Pestaña 1</button>
+        <button role="tab" id="tab2" aria-controls="panel2" aria-selected="false">Pestaña 2</button>
+      </div>
+      <div id="panel1" role="tabpanel" aria-labelledby="tab1">Contenido de la pestaña 1.</div>
+      <div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>Contenido de la pestaña 2.</div>
+
+      <div class="form-group">
+        <span id="name-label">Nombre completo</span>
+        <span id="name-required" class="required">*</span>
+        <input type="text" aria-labelledby="name-label name-required" />
+      </div>
+
+      <button aria-describedby="export-desc" type="button">Exportar</button>
+      <span id="export-desc" class="sr-only">Exportar todos los datos a formato CSV</span>
+
+      <span aria-hidden="true">⭐🌙</span>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Diseño responsivo</h2>
+      <p class="descripcionSeccion">Los diseños deben adaptarse y permitir zoom sin romper funcionalidad.</p>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Validación y pruebas</h2>
+      <p class="descripcionSeccion">Combinar herramientas automáticas con pruebas manuales y usuarios reales.</p>
+    </section>
+
+    <section>
+      <h2 class="tituloSeccion">Idioma</h2>
+      <p class="descripcionSeccion">Los lectores de pantalla usan el idioma para la pronunciación correcta.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo" style="margin-top:2rem;">
+    <p>Pie de página — ejemplo.</p>
+  </footer>
+
+  <!-- JS: validación accesible mínima -->
+  <script>
+    (function(){
+      const form = document.getElementById('contact-form');
+      if(!form) return;
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // limpiar errores previos
+        document.getElementById('error-nombre').textContent = '';
+
+        const nombre = form.querySelector('[name="nombre"]');
+        let hasError = false;
+
+        if(!nombre.value.trim()){
+          document.getElementById('error-nombre').textContent = 'Por favor ingrese su nombre.';
+          nombre.focus();
+          hasError = true;
+        }
+
+        if(!hasError){
+          // aquí realizar envío — para ejemplo mostramos alert accesible
+          alert('Formulario validado. Envío simulado.');
+        }
+      });
+
+      // Mejora: mover foco al <main> cuando se carga mediante skip link
+      const skip = document.querySelector('.skip-link');
+      skip.addEventListener('click', function(){
+        const main = document.getElementById('contenido-principal');
+        if(main){ main.focus(); }
+      });
+    })();
+  </script>
+</body>
+</html>
