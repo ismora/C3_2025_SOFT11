@@ -1,0 +1,82 @@
+:root {
+    --azul: #164a98;
+    --celeste: #9cc8ff;
+    --naranja: #f05323;
+    --fuscia: #c81f66;
+    --rojo: #d2232a;
+    --verde: #4aa147;
+    --verdeOscuro: #00734a;
+    --ceslesteOscuro: #2b93d1;
+    --amarillo: #fff200;
+    --amarilloOscuro: #ffc63e;
+    --morado: #712c86;
+    --turquesa: #00928d;
+    --grisOscuro: #7c7b75;
+    --gris: #d2d2d2;
+    font-family: Arial;
+}
+
+
+body {
+    background-color: #fcfcfc;
+    padding-top: 40px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-title {
+    color: var(--azul);
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-primary {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+fieldset {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px 0px;
+}
+
+legend {
+    width: auto;
+    padding: 0 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.btn {
+    background-color: var(--azul);
+}
+
+/* Personalizar el modal de SweetAlert2: .swal2-success .swal2-error .swal2-warning  .swal2-info .swal2-question */
+.swal2-icon.swal2-warning {
+    border-color: var(--fuscia);
+    /* Color del borde */
+    color: var(--fuscia);
+    /* Color del icono */
+}
+
+.swal2-confirm {
+    background-color: var(--fuscia);
+}
+
+.swal2-confirm:hover {
+    background-color: var(--fuscia);
+    box-shadow: 0 4px 8px rgba(192, 31, 102, 0.3) !important;
+} 

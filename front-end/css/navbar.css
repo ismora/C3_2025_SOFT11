@@ -1,0 +1,106 @@
+/* css/styles.css */
+:root {
+    --azul: #164a98;
+    --celeste: #9cc8ff;
+    --naranja: #f05323;
+    --fuscia: #c81f66;
+    --rojo: #d2232a;
+    --verde: #4aa147;
+    --verdeOscuro: #00734a;
+    --ceslesteOscuro: #2b93d1;
+    --amarillo: #fff200;
+    --amarilloOscuro: #ffc63e;
+    --morado: #712c86;
+    --turquesa: #00928d;
+    --grisOscuro: #7c7b75;
+    --gris: #d2d2d2;
+    font-family: Arial;
+}
+
+.custom-navbar {
+    background-color: var(--azul) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--celeste) !important;
+}
+
+.navbar-brand i {
+    color: var(--amarillo);
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: var(--ceslesteOscuro);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: var(--naranja);
+    color: white !important;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--celeste);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.search-btn {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+    transform: translateY(-2px);
+}
+
+.content {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.color-box {
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
