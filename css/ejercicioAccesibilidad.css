@@ -120,22 +120,26 @@ button {
     margin-right: 10px;
 }
 
+/*Error de contraste en botones corregido. Se cambia a un contraste de 7.03:1*/
 button:first-of-type {
-    background-color: #3498db;
+    background-color: #185D8C;
     color: white;
 }
 
+/*Error de contraste en botones corregido. Se cambia a un contraste de 4.72:1* */
 button:first-of-type:hover {
-    background-color: #2980b9;
+    background-color: #2779B0;
 }
 
+/*Error de contraste en botones corregido. Se cambia a un contraste de 7.57:1*/
 button:last-of-type {
-    background-color: #95a5a6;
+    background-color: #4B5658;
     color: white;
 }
 
+/*Error de contraste en botones corregido. Se cambia a un contraste de 5.83:1*/
 button:last-of-type:hover {
-    background-color: #7f8c8d;
+    background-color: #616666;
 }
 
 /* Imágenes */
@@ -161,7 +165,7 @@ img[src*="background-pattern"] {
 
 /* Enlaces */
 a {
-    color: #3498db;
+    color: #1d5d88;
     text-decoration: none;
     font-weight: bold;
 }

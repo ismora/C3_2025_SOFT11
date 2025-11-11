@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio Accesibilidad</title> <!-- Se cambia el título por defecto "Document" a uno más descriptivo -->
 
     <link rel="stylesheet" href="css/ejercicioAccesibilidad.css">
 </head>
 
 <body>
-    <p>Ejercicio: Identificar y corregir los problemas de accesibilidad en está página web mediante pruebas manuales y automáticas, implementando las mejoras necesarias para cumplir con los estándares WCAG 2.1 nivel AA.</p>
-
-    <div>
-        <div>Formulario de Contacto</div>
+    <header> <!-- Se cambia el div por header para las instrucciones de la página -->
+        <p>Ejercicio: Identificar y corregir los problemas de accesibilidad en está página web mediante pruebas manuales y automáticas, implementando las mejoras necesarias para cumplir con los estándares WCAG 2.1 nivel AA.</p>
+    </header>
+    <main> <!-- Se crea sección main -->
+        <h1>Formulario de Contacto</h1> <!-- Se cambia h2 por h1 para el título principal -->
         
-        <form>
+        <form aria-label="Formulario de contacto para consultas"> <!-- Se agrega aria label a el form -->
             <!-- Campo nombre - Sin label, placeholder como etiqueta -->
             <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                <label for="nombre">Nombre:</label> <!-- Se agrega el label -->
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre"> <!-- Se crea el placeholder -->
             </div>
             
             <!-- Campo email - Sin tipo correcto, sin label -->
             <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico">
+                <label for="email">Email:</label> <!-- Se agrega label -->
+                <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico"> <!-- Se cambia el input a email -->
             </div>
             
             <!-- Teléfono - Sin tipo correcto, sin instrucciones -->
             <div>
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890">
+                <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890"> <!-- Se cambia el input a tel y se pone el formato indicado en el placeholder -->
             </div>
             
             <!-- Asunto - Select sin label, opciones sin descripción -->
             <div>
-                <label for="asunto">Asunto:</label>
+                <label for="asunto">Asunto:</label> <!-- Se agrega label -->
                 <select id="asunto" name="asunto">
-                    <option value="">Elija un asunto</option>
+                    <option value="" disabled selected>Elija el departamento a contactar</option> <!-- Se agrega opción por defecto y se cambial el texto para indicar que debe escoger el departamento a contactar -->
                     <option value="soporte">Soporte</option>
                     <option value="ventas">Ventas</option>
                     <option value="general">General</option>
@@ -46,96 +47,104 @@
             </div>
 
             <!-- Tipo de consulta - Radios sin agrupar, sin labels asociados -->
-            <fieldset>
+            <fieldset> <!-- Se agrupan los radio buttons -->
                 <legend>Tipo de consulta:</legend>
                 <div>
-                    <input type="radio" id="urgente" name="consulta" value="urgente">
+                    <input type="radio" id="urgente" name="consulta" value="urgente"> <!-- Se agrega label -->
                     <label for="urgente">Urgente</label>
                 </div>
                 <div>
-                    <input type="radio" id="normal" name="consulta" value="normal">
+                    <input type="radio" id="normal" name="consulta" value="normal"> <!-- Se agrega label -->
                     <label for="normal">Normal</label>
                 </div>
                 <div>
-                    <input type="radio" id="baja" name="consulta" value="baja">
+                    <input type="radio" id="baja" name="consulta" value="baja"> <!-- Se agrega label -->
                     <label for="baja">Baja prioridad</label>
                 </div>
             </fieldset>
             
             <!-- Adjuntar archivo - Input file sin label -->
             <div>
-                <label for="archivo">Adjuntar archivo:</label>
-                <input type="file" id="archivo" name="archivo">
+                <label for="adjuntarArchivo">Adjuntar archivo:</label> <!-- Se agrega label -->
+                <input type="file" id="adjuntarArchivo" name="adjuntarArchivo">
             </div>
             
             <!-- Mensaje - Textarea sin label, placeholder como etiqueta -->
             <div>
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <label for="textoMensaje">Mensaje:</label> <!-- Se agrega label -->
+                <textarea id="textoMensaje" name="textoMensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea> <!-- Se crea el placeholder -->
             </div>
             
             <!-- Suscripción - Checkbox sin label asociado -->
             <div>
-                <label for="suscripcion">Suscribirse al newsletter</label>
-                <input type="checkbox" id="suscripcion" name="suscripcion">
+                <input type="checkbox" id="checkboxSuscripcion" name="checkboxSuscripcion"> <!-- Se agrega label -->
+                <label for="checkboxSuscripcion">Suscribirse al newsletter</label>
             </div>
             
             <!-- Botones - Sin tipo, sin etiquetas descriptivas -->
             <div>
-                <button type="submit">Enviar mensaje</button>
-                <button type="reset">Borrar formulario</button>
+                <button type="submit" aria-label="Enviar el formulario de contacto">Enviar mensaje</button> <!-- Se cambia el tipo a submit y se agrega aria label -->
+                <button type="reset" aria-label="Borrar toda la información del formulario">Borrar formulario</button> <!-- Se cambia el tipo a reset y se agrega aria label -->
             </div>
         </form>
         
         <!-- Imágenes decorativas sin texto alternativo -->
-        <div>
-            <img src="decorative-line.png" alt="">
-            <img src="icon-phone.png" alt="" style="width: 20px; height: 20px;">
-            <img src="background-pattern.jpg" alt="" width="100%" height="50">
-        </div>
+        <section aria-label="Imágenes decorativas y de contacto">
+            <img src="decorative-line.png" alt=""> <!-- Se deja el alt vacío para imágenes decorativas -->
+            <img src="icon-phone.png" alt="Icono de teléfono para acceso a llamar" style="width: 20px; height: 20px;"> <!-- Se agrega alt descriptivo -->
+            <img src="background-pattern.jpg" alt="" width="100%" height="50"> <!-- Se deja el alt vacío para imágenes decorativas -->
+        </section>
         
         <!-- Enlaces sin texto descriptivo -->
-        <div>
-            <a href="opcion1.html">Click aquí</a> para más información o 
-            <a href="opcion2.html">visita esto</a>.
-        </div>
+        <p>
+                <section aria-label="Enlaces informativos"> <!-- Se agrega aria label para la sección -->
+                Para más información, consulta la 
+                o 
+                <a href="informacion.html">página de información detallada</a> <!-- Se cambia el texto para dar más información -->
+                <a href="servicios.html">visita nuestra sección de servicios</a>. <!-- Se cambia el texto para dar más información -->
+            </p>
+        </section>
         
         <!-- Tabla de horarios sin estructura semántica -->
-        <h1>Horarios de Atención</h2>
-            <table>
+        <section aria-labelledby="horarios de atención"> <!-- Se agrega aria-labelledby -->
+            <h2 >Horarios de Atención</h2> <!-- Se agrega encabezado h2 -->
+            <table>  <!-- Se agrega la estructura semántica de la tabla -->
                 <thead>
-                    <tr>
-                        <th>Día</th>
-                        <th>Horario</th>
-                    </tr>
+                <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Lunes a Viernes</td>
-                        <td>9:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sábados</td>
-                        <td>10:00 - 14:00</td>
-                    </tr>
+                <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>9:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Sábados</td>
+                    <td>10:00 - 14:00</td>
+                </tr>
                 </tbody>
             </table>
+        </section>
         
         <!-- Lista no semántica -->
-        <div>
-            <div>Servicios</div>
-            <div>• Consultoría</div>
-            <div>• Desarrollo</div>
-            <div>• Soporte</div>
-        </div>
-        
+        <section aria-labelledby="servicios"> <!-- Se agrega aria-labelledby -->
+            <h2>Servicios</h2> <!-- Se agrega encabezado h2 -->
+            <ul> <!-- Se cambia div por ul para lista semántica -->
+                <li>Consultoría</li>
+                <li>Desarrollo</li>
+                <li>Soporte</li>
+            </ul>
+        </section>
+    </main>
         <!-- Encabezados sin jerarquía -->
-        <div>
-            <h1>Información Importante</h1>
-            <h2>Políticas de Privacidad</h2>
-            <h3>Términos y Condiciones</h3>
-        </div>
-    </div>
+        <footer aria-labelledby="información importante"> <!-- Se agrega aria-labelledby y se cambia el div por un footer -->
+            <h2>Información Importante</h2> <!-- Se cambia h3 por h2 para mantener jerarquía -->
+            <h3>Políticas de Privacidad</h3> <!-- Se mantiene h3 -->
+            <h4>Términos y Condiciones</h4>  <!-- Se cambia h3 por h4 -->
+        </footer>
+
 </body>
 
 </html>
