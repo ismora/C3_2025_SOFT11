@@ -99,19 +99,17 @@ router.get("/buscar-por-nombre", async (req, res) => {
         if (!texto) {
             return res.status(400).json({ msj: "El campo 'texto' es obligatorio para la búsqueda" });
         }
-
+        
         // Busca certificaciones cuyo nombre contenga el texto (case insensitive)
         const certificaciones = await Certificacion.find({
             nombre: { $regex: texto, $options: 'i' }
             // $regex: Es el operador que dice "busca usando expresión regular" 'i': "case insensitive" (insensible a mayúsculas/minúsculas)
         });
-
         if (certificaciones.length === 0) {
             return res.status(404).json({
                 msj: "No se encontraron certificaciones que contengan el texto en el nombre"
             });
         }
-
         res.json({
             cantidad: certificaciones.length,
             texto_buscado: texto,
